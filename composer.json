@@ -1,0 +1,50 @@
+{
+    "name": "zencodex/package-make",
+    "description": "create separate laravel package/plugin",
+    "keywords": [
+        "laravel",
+        "laravel-package",
+        "laravel-plugin"
+    ],
+    "homepage": "https://github.com/zencodex/package-make",
+    "license": "Apache-2.0",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Yin Qisen",
+            "email": "v@yinqisen.cn"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravel\\Package\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laravel\\Package\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravel\\Package\\PackageServiceProvider"
+            ]
+        }
+    }
+}
