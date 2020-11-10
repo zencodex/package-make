@@ -5,13 +5,22 @@ namespace Laravel\Package;
 use Laravel\Package\Support\Stub;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Package\Commands\MakeCommand;
+use Laravel\Package\Commands\JobMakeCommand;
 use Laravel\Package\Commands\SeedMakeCommand;
 use Laravel\Package\Commands\TestMakeCommand;
+use Laravel\Package\Commands\MailMakeCommand;
+use Laravel\Package\Commands\RuleMakeCommand;
 use Laravel\Package\Commands\ModelMakeCommand;
+use Laravel\Package\Commands\EventMakeCommand;
 use Laravel\Package\Commands\CommandMakeCommand;
+use Laravel\Package\Commands\FactoryMakeCommand;
 use Laravel\Package\Commands\ProviderMakeCommand;
+use Laravel\Package\Commands\ResourceMakeCommand;
+use Laravel\Package\Commands\ListenerMakeCommand;
 use Laravel\Package\Commands\MigrationMakeCommand;
 use Laravel\Package\Commands\ControllerMakeCommand;
+use Laravel\Package\Commands\MiddlewareMakeCommand;
+use Laravel\Package\Commands\NotificationMakeCommand;
 use Laravel\Package\Commands\RouteProviderMakeCommand;
 
 class PackageServiceProvider extends ServiceProvider
@@ -21,15 +30,26 @@ class PackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $this->commands([
-            MakeCommand::class,
-            SeedMakeCommand::class,
-            ProviderMakeCommand::class,
-            ControllerMakeCommand::class,
             CommandMakeCommand::class,
-            RouteProviderMakeCommand::class,
+            ControllerMakeCommand::class,
+            EventMakeCommand::class,
+            FactoryMakeCommand::class,
+            JobMakeCommand::class,
+            ListenerMakeCommand::class,
+            MailMakeCommand::class,
+            MakeCommand::class,
+            MiddlewareMakeCommand::class,
             MigrationMakeCommand::class,
+            NotificationMakeCommand::class,
             ModelMakeCommand::class,
+            ProviderMakeCommand::class,
+            ResourceMakeCommand::class,
+            ResourceMakeCommand::class,
+            RouteProviderMakeCommand::class,
+            RuleMakeCommand::class,
+            SeedMakeCommand::class,
             TestMakeCommand::class,
         ]);
     }

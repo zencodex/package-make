@@ -93,4 +93,13 @@ class Manager
         return $this->config('paths.modules');
     }
 
+    /**
+     * @param string $module
+     * @return bool
+     */
+    public function isExist($module)
+    {
+        return file_exists($this->getModulePath($module));
+    }
+
 }

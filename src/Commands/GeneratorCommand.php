@@ -35,7 +35,19 @@ abstract class GeneratorCommand extends Command
      */
     public function handle(): int
     {
-        app('modules')->setPackageName($this->argument('module'));
+        $moduleName = $this->argument('module');
+
+        if (!$moduleName) {
+            $this->error('You should input the name of module');
+            return E_ERROR;
+        }
+
+        if (!app('modules')->isExist($moduleName)) {
+            $this->error('Module not found, use command package:make to create module first');
+            return E_ERROR;
+        }
+
+        app('modules')->setPackageName($moduleName);
         $path = str_replace('\\', '/', $this->getDestinationFilePath());
 
         if (!$this->laravel['files']->isDirectory($dir = dirname($path))) {
