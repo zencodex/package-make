@@ -4,6 +4,10 @@ namespace $NAMESPACE$;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class $CLASS$
+ * @package $NAMESPACE$
+ */
 class $CLASS$ extends Model
 {
     protected $fillable = $FILLABLE$;
