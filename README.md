@@ -40,17 +40,21 @@ Modules/NewPackage
 ├── Config
 │   └── config.php
 ├── Console
+│   └── UserCommand.php
 ├── Database
 │   ├── Migrations
 │   ├── Seeders
 │   │   └── NewPackageDatabaseSeeder.php
 │   └── factories
-├── Entities
 ├── Http
 │   ├── Controllers
 │   │   └── NewPackageController.php
 │   ├── Middleware
-│   └── Requests
+│   ├── Requests
+│   └── Resources
+│       └── UserResource.php
+├── Models
+│   └── User.php
 ├── Providers
 │   ├── NewPackageServiceProvider.php
 │   └── RouteServiceProvider.php
@@ -74,7 +78,6 @@ Modules/NewPackage
 ├── composer.json
 ├── package.json
 └── webpack.mix.js
-
 ```
 
 ## Usage in project
