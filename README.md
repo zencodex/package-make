@@ -1,4 +1,6 @@
-# create separate laravel package/plugin
+![](https://gitee.com/zencodex/images/raw/master/package-make.png)
+
+# Create PHP or laravel package/plugin
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/zencodex/package-make.svg?style=flat-square)](https://packagist.org/packages/zencodex/package-make)
 [![Build Status](https://img.shields.io/travis/zencodex/package-make/master.svg?style=flat-square)](https://travis-ci.org/zencodex/package-make)
@@ -11,10 +13,10 @@ Thanks to `nwidart/laravel-modules`, I get many code from it and reimplement.
 
 **Why I re-implement (don't use `nwidart/laravel-modules`)?**
 
-1. Too many commands that I have never used.
-2. Just required in devepopment, should remove it in production.
-3. `nwidart/laravel-modules` stubs injected `module_path`, you can't remove it in production.
-4. Laravel SerivceProvider should be enought, don't need `nwidart/laravel-modules` to manage modules.
+1. `nwidart/laravel-modules` stubs injected `module_path`, you can't remove it in production.
+2. Just a standard composer package, you don't need `nwidart/laravel-modules` to manage modules.
+3. Update some stubs and folders structure, keep it like laravel.
+4. You can remove this package in production, Just required in devepopment.
 
 So I seperate new one `zencodex/package-make`, resovled above issues.
 
@@ -96,6 +98,21 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(NewPackageServiceProvider::class);
         ...
     }
+```
+
+or 
+
+Edit `config/app.php`, add `Modules\NewPackage\Providers\NewPackageServiceProvider::class` to providers.
+
+```.php
+
+    'providers' => [
+        Illuminate\Validation\ValidationServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+        Modules\NewPackage\Providers\NewPackageServiceProvider::class
+        ...
+    ],
+
 ```
 
 option 2:
