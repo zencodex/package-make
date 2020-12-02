@@ -84,7 +84,7 @@ Modules/NewPackage
 
 ## Custom namespace and path
 
-`php artisan vendor:publish --provider="Laravel\Package\PackageServiceProvider"`
+`php artisan vendor:publish --tag=package`
 
 ```.php
 // edit config/package.php

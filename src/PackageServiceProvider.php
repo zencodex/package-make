@@ -55,7 +55,7 @@ class PackageServiceProvider extends ServiceProvider
 
         $this->publishes([
             dirname(__DIR__, 1) . '/config/config.php' => config_path('package.php'),
-        ], 'config');
+        ], 'package');
     }
 
     /**
