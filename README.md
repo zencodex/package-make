@@ -82,7 +82,7 @@ Modules/NewPackage
 └── webpack.mix.js
 ```
 
-### Custom namespace and path
+## Custom namespace and path
 
 `php artisan vendor:publish --provider="Laravel\Package\PackageServiceProvider"`
 
