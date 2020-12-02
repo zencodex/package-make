@@ -1,11 +1,73 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
+/**
+ * You can custom package namespace and modules path
  */
 return [
 
-    'namespace' => 'Modules',
+     // Custom package namespace
+    'namespace' => 'Package',
+
+    'paths'     => [
+        // Custom generated files path
+        'modules' => base_path('Modules'),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Modules assets path
+        |--------------------------------------------------------------------------
+        |
+        | Here you may update the modules assets path.
+        |
+        */
+
+        'assets' => public_path('modules'),
+        /*
+        |--------------------------------------------------------------------------
+        | The migrations path
+        |--------------------------------------------------------------------------
+        |
+        | Where you run 'module:publish-migration' command, where do you publish the
+        | the migration files?
+        |
+        */
+
+        'migration' => base_path('database/migrations'),
+        /*
+        |--------------------------------------------------------------------------
+        | Generator path
+        |--------------------------------------------------------------------------
+        | Customise the paths where the folders will be generated.
+        | Set the generate key to false to not generate that folder
+        */
+        'generator' => [
+            'config'        => ['path' => 'Config', 'generate' => true],
+            'command'       => ['path' => 'Console', 'generate' => true],
+            'migration'     => ['path' => 'Database/Migrations', 'generate' => true],
+            'seeder'        => ['path' => 'Database/Seeders', 'generate' => true],
+            'factory'       => ['path' => 'Database/factories', 'generate' => true],
+            'model'         => ['path' => 'Models', 'generate' => true],
+            'routes'        => ['path' => 'Routes', 'generate' => true],
+            'controller'    => ['path' => 'Http/Controllers', 'generate' => true],
+            'filter'        => ['path' => 'Http/Middleware', 'generate' => true],
+            'request'       => ['path' => 'Http/Requests', 'generate' => true],
+            'provider'      => ['path' => 'Providers', 'generate' => true],
+            'assets'        => ['path' => 'Resources/assets', 'generate' => true],
+            'lang'          => ['path' => 'Resources/lang', 'generate' => true],
+            'views'         => ['path' => 'Resources/views', 'generate' => true],
+            'test'          => ['path' => 'Tests/Unit', 'generate' => true],
+            'test-feature'  => ['path' => 'Tests/Feature', 'generate' => true],
+            'repository'    => ['path' => 'Repositories', 'generate' => false],
+            'event'         => ['path' => 'Events', 'generate' => false],
+            'listener'      => ['path' => 'Listeners', 'generate' => false],
+            'policies'      => ['path' => 'Policies', 'generate' => false],
+            'rules'         => ['path' => 'Rules', 'generate' => false],
+            'jobs'          => ['path' => 'Jobs', 'generate' => false],
+            'emails'        => ['path' => 'Mail', 'generate' => false],
+            'notifications' => ['path' => 'Notifications', 'generate' => false],
+            'resource'      => ['path' => 'Http/Resources', 'generate' => false],
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -66,74 +128,6 @@ return [
             ],
         ],
         'gitkeep'      => true,
-    ],
-    'paths'     => [
-        /*
-        |--------------------------------------------------------------------------
-        | Modules path
-        |--------------------------------------------------------------------------
-        |
-        | This path used for save the generated module. This path also will be added
-        | automatically to list of scanned folders.
-        |
-        */
-
-        'modules' => base_path('Modules'),
-        /*
-        |--------------------------------------------------------------------------
-        | Modules assets path
-        |--------------------------------------------------------------------------
-        |
-        | Here you may update the modules assets path.
-        |
-        */
-
-        'assets' => public_path('modules'),
-        /*
-        |--------------------------------------------------------------------------
-        | The migrations path
-        |--------------------------------------------------------------------------
-        |
-        | Where you run 'module:publish-migration' command, where do you publish the
-        | the migration files?
-        |
-        */
-
-        'migration' => base_path('database/migrations'),
-        /*
-        |--------------------------------------------------------------------------
-        | Generator path
-        |--------------------------------------------------------------------------
-        | Customise the paths where the folders will be generated.
-        | Set the generate key to false to not generate that folder
-        */
-        'generator' => [
-            'config'        => ['path' => 'Config', 'generate' => true],
-            'command'       => ['path' => 'Console', 'generate' => true],
-            'migration'     => ['path' => 'Database/Migrations', 'generate' => true],
-            'seeder'        => ['path' => 'Database/Seeders', 'generate' => true],
-            'factory'       => ['path' => 'Database/factories', 'generate' => true],
-            'model'         => ['path' => 'Models', 'generate' => true],
-            'routes'        => ['path' => 'Routes', 'generate' => true],
-            'controller'    => ['path' => 'Http/Controllers', 'generate' => true],
-            'filter'        => ['path' => 'Http/Middleware', 'generate' => true],
-            'request'       => ['path' => 'Http/Requests', 'generate' => true],
-            'provider'      => ['path' => 'Providers', 'generate' => true],
-            'assets'        => ['path' => 'Resources/assets', 'generate' => true],
-            'lang'          => ['path' => 'Resources/lang', 'generate' => true],
-            'views'         => ['path' => 'Resources/views', 'generate' => true],
-            'test'          => ['path' => 'Tests/Unit', 'generate' => true],
-            'test-feature'  => ['path' => 'Tests/Feature', 'generate' => true],
-            'repository'    => ['path' => 'Repositories', 'generate' => false],
-            'event'         => ['path' => 'Events', 'generate' => false],
-            'listener'      => ['path' => 'Listeners', 'generate' => false],
-            'policies'      => ['path' => 'Policies', 'generate' => false],
-            'rules'         => ['path' => 'Rules', 'generate' => false],
-            'jobs'          => ['path' => 'Jobs', 'generate' => false],
-            'emails'        => ['path' => 'Mail', 'generate' => false],
-            'notifications' => ['path' => 'Notifications', 'generate' => false],
-            'resource'      => ['path' => 'Http/Resources', 'generate' => false],
-        ],
     ],
 
 ];

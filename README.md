@@ -82,6 +82,29 @@ Modules/NewPackage
 └── webpack.mix.js
 ```
 
+### Custom namespace and path
+
+`php artisan vendor:publish --provider="Laravel\Package\PackageServiceProvider"`
+
+```.php
+// edit config/package.php
+// use namespace Balabala
+// generate package files in plugins folder
+
+return [
+
+     // Custom package namespace
+    'namespace' => 'Balabala',
+
+    'paths'     => [
+        // Custom generated files path
+        'modules' => base_path('plugins'),
+
+// ...
+
+```
+
+
 ## Usage in project
 
 option 1:

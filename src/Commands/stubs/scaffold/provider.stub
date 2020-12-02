@@ -47,9 +47,11 @@ class $CLASS$ extends ServiceProvider
      */
     protected function registerConfig()
     {
-        $this->publishes([
-            dirname(__DIR__) . '/$PATH_CONFIG$/config.php' => config_path($this->moduleNameLower . '.php'),
-        ], 'config');
+        // uncomment when you need publish package config
+//        $this->publishes([
+//            dirname(__DIR__) . '/$PATH_CONFIG$/config.php' => config_path($this->moduleNameLower . '.php'),
+//        ], 'config');
+
         $this->mergeConfigFrom(
             dirname(__DIR__) . '/$PATH_CONFIG$/config.php', $this->moduleNameLower
         );

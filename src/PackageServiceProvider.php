@@ -52,6 +52,10 @@ class PackageServiceProvider extends ServiceProvider
             SeedMakeCommand::class,
             TestMakeCommand::class,
         ]);
+
+        $this->publishes([
+            dirname(__DIR__, 1) . '/config/config.php' => config_path('package.php'),
+        ], 'config');
     }
 
     /**
@@ -60,7 +64,12 @@ class PackageServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(dirname(__DIR__) . '/config/config.php', 'modules');
+        $publishedConfig = config_path('package.php');
+        if (file_exists($publishedConfig)) {
+            $this->mergeConfigFrom($publishedConfig, 'modules');
+        } else {
+            $this->mergeConfigFrom(dirname(__DIR__) . '/config/config.php', 'modules');
+        }
 
         $path = config('modules.stubs.path') ?? __DIR__ . '/Commands/stubs';
         Stub::setBasePath($path);
