@@ -3,7 +3,7 @@
 namespace Laravel\Package\Commands;
 
 use Illuminate\Support\Str;
-use Laravel\Package\Module;
+use Laravel\Package\Manager;
 use Laravel\Package\Support\Config\GenerateConfigReader;
 use Laravel\Package\Support\Stub;
 use Laravel\Package\Traits\ModuleCommandTrait;
@@ -75,7 +75,7 @@ class ListenerMakeCommand extends GeneratorCommand
         return $module->config('paths.generator.listener.namespace') ?: $module->config('paths.generator.listener.path', 'Listeners');
     }
 
-    protected function getEventName(Module $module)
+    protected function getEventName(Manager $module)
     {
         $namespace = $this->laravel['modules']->config('namespace') . "\\" . $module->getStudlyName();
         $eventPath = GenerateConfigReader::read('event');

@@ -93,7 +93,7 @@ abstract class GeneratorCommand extends Command
     /**
      * Get class namespace.
      *
-     * @param \Laravel\Package\Module $module
+     * @param \Laravel\Package\Manager $module
      *
      * @return string
      */

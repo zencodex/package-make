@@ -3,7 +3,7 @@
 namespace Laravel\Package\Commands;
 
 use Illuminate\Support\Str;
-use Laravel\Package\Module;
+use Laravel\Package\Manager;
 use Laravel\Package\Support\Config\GenerateConfigReader;
 use Laravel\Package\Support\Stub;
 use Laravel\Package\Traits\ModuleCommandTrait;
@@ -74,7 +74,7 @@ class ProviderMakeCommand extends GeneratorCommand
     {
         $stub = $this->option('master') ? 'scaffold/provider' : 'provider';
 
-        /** @var Module $module */
+        /** @var Manager $module */
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/' . $stub . '.stub', [
