@@ -31,14 +31,14 @@ composer require --dev zencodex/package-make
 ## Usage
 
 ``` php
-// Modules/NewPackage
+// modules/NewPackage
 php artisan package:make NewPackage
 ```
 
 NewPackage structure:
 
 ```
-Modules/NewPackage
+modules/NewPackage
 ├── Config
 │   └── config.php
 ├── Console
@@ -112,7 +112,7 @@ option 1:
 ```php
 // app/Providers/AppServiceProvider.php
 
-use Modules\NewPackage\Providers\NewPackageServiceProvider;
+use Package\NewPackage\Providers\NewPackageServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 
@@ -125,14 +125,14 @@ class AppServiceProvider extends ServiceProvider
 
 or 
 
-Edit `config/app.php`, add `Modules\NewPackage\Providers\NewPackageServiceProvider::class` to providers.
+Edit `config/app.php`, add `Package\NewPackage\Providers\NewPackageServiceProvider::class` to providers.
 
 ```.php
 
     'providers' => [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Modules\NewPackage\Providers\NewPackageServiceProvider::class
+        Package\NewPackage\Providers\NewPackageServiceProvider::class
         ...
     ],
 
@@ -145,7 +145,7 @@ option 2:
 "repositories": [
     {
         "type": "path",
-        "url": "Modules/*"
+        "url": "modules/*"
     }
 ]
 

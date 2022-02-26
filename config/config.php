@@ -10,7 +10,7 @@ return [
 
     'paths'     => [
         // Custom generated files path
-        'modules' => base_path('Modules'),
+        'modules' => base_path('modules'),
 
         /*
         |--------------------------------------------------------------------------
