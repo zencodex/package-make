@@ -1,3 +1,7 @@
+package-make was abandon, please use packagit:
+
+<https://github.com/packagit/packagit>
+
 ![](https://gitee.com/zencodex/images/raw/master/package-make.png)
 
 # Create PHP or laravel package/plugin
